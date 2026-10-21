@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Add or edit an expense." />
+    <title>Add expense · Expensify</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <header id="app-header"></header>
+
+    <main id="main" class="mx-auto w-full max-w-xl px-4 py-6 md:px-6">
+      <div id="page-alert"></div>
+
+      <div id="not-found" hidden></div>
+
+      <form id="expense-form" class="card" novalidate>
+        <header>
+          <h1 id="form-title" class="text-xl font-bold">Add expense</h1>
+          <p class="text-sm text-muted-foreground">Fields marked * are required.</p>
+        </header>
+
+        <section class="grid gap-5">
+          <div class="field" id="amount-field">
+            <label for="amount">Amount *</label>
+            <div class="relative">
+              <span id="currency-prefix" class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-muted-foreground" aria-hidden="true"></span>
+              <input type="text" id="amount" name="amount" class="input min-h-11 pl-8" inputmode="decimal" autocomplete="off" placeholder="0.00" />
+            </div>
+            <p id="amount-error" class="text-sm text-destructive" hidden></p>
+          </div>
+
+          <div class="field" id="category-field">
+            <label for="category">Category *</label>
+            <select id="category" name="category" class="select min-h-11 w-full">
+              <option value="">Choose a category</option>
+            </select>
+            <p id="category-error" class="text-sm text-destructive" hidden></p>
+          </div>
+
+          <div class="field" id="date-field">
+            <label for="date">Date *</label>
+            <input type="date" id="date" name="date" class="input min-h-11" />
+            <p id="date-error" class="text-sm text-destructive" hidden></p>
+          </div>
+
+          <div class="field" id="description-field">
+            <label for="description">Description</label>
+            <input type="text" id="description" name="description" class="input min-h-11" autocomplete="off" placeholder="e.g., Lunch with friends" aria-describedby="description-count" />
+            <div class="flex items-start justify-between gap-2">
+              <p id="description-error" class="text-sm text-destructive" hidden></p>
+              <p id="description-count" class="ms-auto text-xs text-muted-foreground tabular-nums">0/100</p>
+            </div>
+          </div>
+        </section>
+
+        <footer class="flex flex-col-reverse items-stretch gap-2 sm:flex-row sm:items-center sm:justify-end">
+          <button type="button" id="cancel-button" class="btn min-h-11" data-variant="outline">Cancel</button>
+          <button type="submit" id="save-button" class="btn min-h-11">Save</button>
+        </footer>
+      </form>
+    </main>
+
+    <div id="toaster" class="toaster"></div>
+    <script type="module" src="/src/pages/expense-form.js"></script>
+  </body>
+</html>

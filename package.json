@@ -1,0 +1,21 @@
+{
+  "name": "expensify",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A simple, responsive expense tracker that runs entirely in the browser.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "basecoat-css": "1.0.2",
+    "date-fns": "4.4.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.3.3",
+    "tailwindcss": "4.3.3",
+    "vite": "8.3.4"
+  }
+}

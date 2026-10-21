@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@import "basecoat-css";
+
+@layer base {
+  body {
+    @apply min-h-screen bg-background text-foreground antialiased;
+  }
+}
